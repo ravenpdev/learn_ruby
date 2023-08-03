@@ -46,23 +46,20 @@ def get_input(first = true)
   end
 end
 
-display_choices
-input = get_operation
-
-if input <= 5
-  if input == 1
+def execute_operation(operation)
+  if operation == 1
     num1 = get_input
     num2 = get_input(false)
     puts sum(num1, num2)
-  elsif input == 2
+  elsif operation == 2
     num1 = get_input
     num2 = get_input(false)
     puts diff(num1, num2)
-  elsif input == 3
+  elsif operation == 3
     num1 = get_input
     num2 = get_input(false)
     puts product(num1, num2)
-  elsif input == 4
+  elsif operation == 4
     num1 = get_input
     num2 = get_input(false)
     puts quotient(num1, num2)
@@ -71,6 +68,13 @@ if input <= 5
     num2 = get_input(false)
     puts modulo(num1, num2)
   end
+end
+
+display_choices
+input = get_operation
+
+if input <= 5
+  execute_operation(input)
 else
   puts "Unknown operation"
 end
