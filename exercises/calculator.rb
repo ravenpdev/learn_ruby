@@ -25,6 +25,7 @@ def display_choices
   puts "2. Subtraction"
   puts "3. Multiplication"
   puts "4. Division"
+  puts "5. Modulo"
 end
 
 def get_operation
@@ -48,7 +49,7 @@ end
 display_choices
 input = get_operation
 
-if input <= 4
+if input <= 5
   if input == 1
     num1 = get_input
     num2 = get_input(false)
@@ -61,10 +62,14 @@ if input <= 4
     num1 = get_input
     num2 = get_input(false)
     puts product(num1, num2)
-  else
+  elsif input == 4
     num1 = get_input
     num2 = get_input(false)
     puts quotient(num1, num2)
+  else
+    num1 = get_input
+    num2 = get_input(false)
+    puts modulo(num1, num2)
   end
 else
   puts "Unknown operation"
