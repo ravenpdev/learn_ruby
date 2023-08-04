@@ -20,7 +20,7 @@ while attempt < 4
 
   user = auth_user(username, password, users)
 
-  if not user.nil?
+  if !user.nil?
     p user
   else
     puts "Credentials were not correct"
