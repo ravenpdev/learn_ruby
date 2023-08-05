@@ -1,4 +1,10 @@
+# $LOAD_PATH << '../'
+
+require '../hashing'
+
 class Student
+  include Crud
+
   attr_accessor :first_name, :last_name, :email, :username
   attr_reader :password
 
@@ -23,9 +29,11 @@ class Student
   end
 end
 
-raven = Student.new("raven", "paragas", "ravenp", "ravenp.dev@gmail.com", "password123")
-tin = Student.new("kristine", "paragas", "tin", "tin@gmail.com", "password123")
+raven = Student.new('raven', 'paragas', 'ravenp', 'ravenp.dev@gmail.com', 'password123')
+tin = Student.new('kristine', 'paragas', 'tin', 'tin@gmail.com', 'password123')
 
 puts raven
 puts tin
 puts tin.password
+
+puts raven.create_hash_digest(raven.password)
